@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DataHandling</string>
+    <string name="app_home">Home</string>
+    <string name="app_nocache">No Cache</string>
+    <string name="app_cache">Cache</string>
+</resources>

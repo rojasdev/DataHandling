@@ -4,6 +4,10 @@
         android:icon="@drawable/ic_home"
         android:title="@string/app_home" />
     <item
+        android:id="@+id/nav_lazy_live"
+        android:icon="@drawable/ic_lazy"
+        android:title="@string/app_online_lazy" />
+    <item
         android:id="@+id/nav_nocache"
         android:icon="@drawable/ic_nocache"
         android:title="@string/app_nocache" />

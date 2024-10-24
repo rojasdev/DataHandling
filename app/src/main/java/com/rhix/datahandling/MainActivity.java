@@ -34,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
                 if (itemId == R.id.nav_home) {
                     selectedFragment = new FragmentUser();
+                }else if(itemId == R.id.nav_lazy_live){
+                    selectedFragment = new FragmentLazyLoadingLive();
                 }else if(itemId == R.id.nav_nocache){
-                    selectedFragment = new FragmentUser();
+                    selectedFragment = new FragmentLazyLoadingNative();
                 }else if(itemId == R.id.nav_cache) {
                     selectedFragment = new FragmentCache();
                 }

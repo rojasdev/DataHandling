@@ -12,7 +12,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database Version and Name
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "userDatabase";
 
     // Table Name
@@ -63,6 +63,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_USERS;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID));
+                String firstName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRST_NAME));
+                String lastName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LAST_NAME));
+                String email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL));
+
+                User user = new User(id, firstName, lastName, email);
+                userList.add(user);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return userList;
+    }
+
+    // Get users with pagination, sorted by ID descending
+    public List<User> getUsers(int limit, int offset) {
+        List<User> userList = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_USERS + " ORDER BY " + COLUMN_ID + " DESC LIMIT " + limit + " OFFSET " + offset;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

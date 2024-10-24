@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">DataHandling</string>
-    <string name="app_home">Home</string>
-    <string name="app_nocache">No Cache</string>
-    <string name="app_cache">Cache</string>
+    <string name="app_home">Live Default</string>
+    <string name="app_online_lazy">Live Lazy Load</string>
+    <string name="app_nocache">Native Lazy Load</string>
+    <string name="app_cache">Native DB</string>
 </resources>

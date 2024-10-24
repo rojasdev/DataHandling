@@ -28,9 +28,9 @@ public class FragmentUser extends Fragment {
     private UserAdapter userAdapter;
     private List<User> userList;
     // define API URL here
-    private static final String API_URL = "https://..";
+    private static final String API_URL = "https://devlab.helioho.st/api/listing.php";
     // provide API KEY here
-    private static final String API_KEY = "XXX"; // Replace with your API key
+    private static final String API_KEY = "7999b0bd43fe96b083f8430a0de1cc65ecf3902993d15ffb6d3a287f9e939000"; // Replace with your API key
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
